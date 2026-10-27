@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>البحث عن المعلمين - محافظة سوهاج</title>
+
+  <!-- Cairo Arabic font with fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Skip link for keyboard/screen-reader accessibility -->
+  <a href="#search-input" class="skip-link">انتقل إلى البحث</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <h1 class="site-title">
+        <span class="title-icon" aria-hidden="true">🎓</span>
+        البحث عن المعلمين
+      </h1>
+      <p class="site-subtitle">محافظة سوهاج</p>
+    </div>
+  </header>
+
+  <main class="main-content" id="main">
+
+    <!-- Search form -->
+    <section class="search-section" aria-label="قسم البحث">
+      <form class="search-form" id="search-form" role="search" novalidate>
+        <div class="input-group">
+          <label for="search-input" class="search-label">
+            ابحث بالاسم
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="search"
+              id="search-input"
+              name="query"
+              class="search-input"
+              placeholder="اكتب اسم المعلم أو جزءاً منه…"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="اكتب اسم المعلم"
+              aria-describedby="search-hint"
+              maxlength="100"
+            />
+            <!-- Clear button (shown when input has text) -->
+            <button
+              type="button"
+              id="clear-btn"
+              class="clear-btn"
+              aria-label="مسح البحث"
+              hidden
+            >
+              <span aria-hidden="true">✕</span>
+            </button>
+          </div>
+          <p id="search-hint" class="search-hint">
+            اضغط على زر البحث أو اضغط Enter للبحث
+          </p>
+        </div>
+
+        <button type="submit" id="search-btn" class="search-btn" aria-label="ابحث عن المعلم">
+          <span class="btn-icon" aria-hidden="true">🔍</span>
+          بحث
+        </button>
+      </form>
+    </section>
+
+    <!-- Live region for screen-reader announcements -->
+    <div
+      id="sr-announcer"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <!-- Results area -->
+    <section
+      class="results-section"
+      id="results-section"
+      aria-label="نتائج البحث"
+    >
+      <!-- State messages and result cards are injected here by JS -->
+      <div id="results-container"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>البيانات مستخرجة من ملف <strong>محافظة سوهاج</strong></p>
+    <p class="footer-note">هذه القائمة للاستعلام فقط ولا تُعبّر بالضرورة عن الوضع الوظيفي الحالي</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
